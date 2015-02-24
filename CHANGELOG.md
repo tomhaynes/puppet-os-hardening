@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+**API-change**: renamed module to `hardening-os_hardening`
+
+* improvement: linting
+
 ## 1.0.2
 
 * improvement: only run 'update-pam' when needed
@@ -45,7 +51,7 @@
 
 * feature: add configurable system environment
 * feature: remove suid/sgid bits from blacklist
-* feature: remove suid/sgid bits from unkown files
+* feature: remove suid/sgid bits from unknown files
 
 ## 0.1.0
 
