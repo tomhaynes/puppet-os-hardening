@@ -11,7 +11,7 @@
 #
 class os_hardening::login_defs (
   $extra_user_paths         = [],
-  $umask                    = '027',
+  $umask                    = undef,
   $password_max_age         = 60,
   $password_min_age         = 7,
   $login_retries            = 5,
@@ -21,6 +21,18 @@ class os_hardening::login_defs (
 ) {
 
   # prepare all variables
+  if $umask {
+    $final_umask = $umask
+  } else {
+    case $::operatingsystem {
+      'RedHat','CentOS': {
+        $final_umask = '077'
+      }
+      default: {
+        $final_umask = '027'
+      }
+    }
+  }
   $additional_user_paths = join($extra_user_paths, ':')
 
   # set the file

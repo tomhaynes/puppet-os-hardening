@@ -40,6 +40,10 @@ class os_hardening::minimize_access (
       $shadowgroup = 'shadow'
       $shadowmode  = '0640'
     }
+    'RedHat','CentOS': {
+      $shadowgroup = 'root'
+      $shadowmode  = '0000'
+    }
     default: {
       $shadowgroup = 'root'
       $shadowmode  = '0600'

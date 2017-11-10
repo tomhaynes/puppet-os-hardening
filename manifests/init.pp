@@ -13,7 +13,7 @@ class os_hardening (
   $system_environment       = 'default',
 
   $extra_user_paths         = [],
-  $umask                    = '027',
+  $umask                    = undef,
   $password_max_age         = 60,
   $password_min_age         = 7,
   $login_retries            = 5,
@@ -107,6 +107,7 @@ class os_hardening (
   class { 'os_hardening::profile':
     enable_core_dump => $enable_core_dump,
   }
+  class { 'os_hardening::modprobe': }
   class { 'os_hardening::securetty':
     root_ttys => $root_ttys,
   }
@@ -137,4 +138,3 @@ class os_hardening (
   }
 
 }
-
