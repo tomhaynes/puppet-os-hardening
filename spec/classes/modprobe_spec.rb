@@ -21,7 +21,7 @@ describe 'os_hardening::modprobe' do # rubocop:disable Metrics/BlockLength
   it { should contain_class('os_hardening::modprobe') }
 
     context 'with no paramaters' do
-      it { should contain_file('/etc/modprobe.d/modprobe.conf')}
+      it { should contain_file('/etc/modprobe.d/dev-sec.conf')}
     end
 
 end

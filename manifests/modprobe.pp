@@ -12,7 +12,7 @@
 class os_hardening::modprobe ()
 {
 
-    file { '/etc/modprobe.d/modprobe.conf':
+    file { '/etc/modprobe.d/dev-sec.conf':
       ensure => file,
       source => 'puppet:///modules/os_hardening/modprobe.conf',
       owner  => 'root',
